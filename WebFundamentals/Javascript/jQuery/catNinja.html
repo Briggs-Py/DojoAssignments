@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>jQuery Basics</title>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+      </script>
+      <script>
+          $(document).ready(function(){
+              $("img").click(function(){
+                  var src=$(this).attr('src');
+                  var alt_src=$(this).attr("data-alt-src");
+                  $(this).attr("data-alt-src", src);
+                  $(this).attr("src", alt_src);
+              })
+          })
+      </script>
+   </head>
+   <body>
+       <div id="wrapper">
+            <img style="display:block" src="img/ninja0.png" data-alt-src="img/cat0.png">
+            <img style="display:block" src="img/ninja1.png" data-alt-src="img/cat1.png">
+            <img style="display:block" src="img/ninja2.png" data-alt-src="img/cat2.png">
+            <img style="display:block" src="img/ninja3.png" data-alt-src="img/cat3.png">
+            <img style="display:block" src="img/ninja4.png" data-alt-src="img/cat4.png">
+       </div>
+   </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PokemonData</title>
+        <link rel="stylesheet" href="pokemonData.css">
+        <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            for(var num = 1; num<152; num++){
+                $("#pokemon").append("<img id="+num+" src='http://pokeapi.co/media/img/"+num+".png'>");
+            }
+
+            $("img").click(function(){
+                var j = $(this).attr("id");
+                $.get("http://pokeapi.co/api/v1/pokemon/"+j+"/", function(res){
+                    for(var i = 0; i< res.types.length; i++){
+                        console.log(res.types.name);
+                    }
+
+                })
+
+            })
+            // $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
+            //         var html_str = "";
+            //         html_str += "<h4>Types</h4>";
+            //         html_str += "<ul>";
+            //         for(var i = 0; i < res.types.length; i++) {
+            //             html_str += "<li>" + res.types[i].name + "</li>";
+            //         }
+            //         html_str += "</ul>";
+            //         $("#bulbasaur").html(html_str);
+            //     }, "json");
+        })
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="pokemon">
+
+            </div>
+            <div id="pokedex">
+
+            </div>
+        </div>
+    </body>
+</html>

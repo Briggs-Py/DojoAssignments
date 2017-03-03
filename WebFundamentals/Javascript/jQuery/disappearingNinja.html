@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Disappearing Ninja</title>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+      </script>
+      <script>
+          $(document).ready(function(){
+              $("img").click(function(){
+                  $(this).fadeOut("slow");
+              })
+              $("button").click(function(){
+                  $("img").show()
+              })
+          })
+      </script>
+   </head>
+   <body>
+       <div id="wrapper">
+        <img src="ninja.jpeg" alt="Ninja">
+        <img src="ninja.jpeg" alt="Ninja">
+       </div>
+       <button id="restore">Restore</button>
+   </body>
+</html>

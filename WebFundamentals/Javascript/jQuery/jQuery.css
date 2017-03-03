@@ -1,0 +1,35 @@
+#wrapper{
+ height: 1500px;
+ width: 920px;
+ display: inline-block;
+}
+.example{
+    width: 920px;
+    height: 270px;
+    border-bottom: 3px solid gray;
+    padding: 10px;
+}
+#bgImg{
+    background-color: blue;
+    color: white;
+}
+.example button{
+    display:inline-block;
+    vertical-align: top;
+
+}
+.example h2{
+    text-align: center;
+}
+.example p{
+    display:inline-block;
+    vertical-align: top;
+    margin: auto;
+    padding-bottom: 20px;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}

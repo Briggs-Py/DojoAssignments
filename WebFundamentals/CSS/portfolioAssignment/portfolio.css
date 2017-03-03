@@ -1,0 +1,156 @@
+*{
+    margin:0px auto;
+    outline: 0px dotted red;
+}
+
+#header h1{
+    margin-left: 25px;
+    margin-top: 7px;
+    display:inline-block;
+    font-family: "Comic Sans MS";
+}
+#header h2{
+    display:inline-block;
+    margin-left: 290px;
+    font-family: monospace;
+}
+#header{
+ height: 60px;
+ width: 920px;
+ background-color: #F7F7F7;
+ color: black;
+}
+#main_body{
+ height: 850px;
+ width: 920px;
+ background: radial-gradient(circle, #6F5964, #1B0B0F);
+ vertical-align:top;
+}
+#profile_pic{
+    display:inline-block;
+    width:380px;
+    height:250px;
+    border: 5px solid #C0C0C0;
+    margin-top: 20px;
+    margin-left: 25px;"
+}
+#about{
+    height: 260px;
+    width: 450px;
+    background: linear-gradient(to right, white , #DACBD9);
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 20px;
+    margin-left: 21px;
+}
+#about h2{
+    max-height: 40px;
+    min-height: 40px;
+    max-width: 450px;
+    background: linear-gradient(#B3B2B6, #878593, #B3B2B6);
+    vertical-align: top;
+    color:white;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+#about p{
+    margin: 8px 0px 10px 10px;
+}
+#about a{
+    margin: 10px 0px 10px 10px;
+    color: black;
+}
+#container p{
+    min-height: 125px;
+    margin: 10px 0px 10px 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+#la_mode{
+    height: 525px;
+    width: 275px;
+    background: linear-gradient(to right, white , #DACBD9);
+    display:inline-block;
+    vertical-align: top;
+    margin-top: 30px;
+    margin-left: 25px;
+}
+#family_contacts{
+    height: 525px;
+    width: 275px;
+    background: linear-gradient(to right, white , #DACBD9);
+    display:inline-block;
+    vertical-align:top;
+    margin-top: 30px;
+    margin-left: 16px;
+}
+#five_eleven{
+    height: 525px;
+    width: 275px;
+    background: linear-gradient(to right, white , #DACBD9);
+    display:inline-block;
+    margin-left: 16px;
+    margin-top: 30px;
+}
+.header3{
+    max-height: 40px;
+    min-height: 40px;
+    max-width: : 275px;
+    background: linear-gradient(#B3B2B6, #878593, #B3B2B6);
+    vertical-align: top;
+    color: white;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.pic3{
+    width: 275px;
+    height: 140px;
+    vertical-align: top;
+}
+.tech{
+    max-height: 30px;
+    min-height: 30px;
+    max-width: : 275px;
+    background: linear-gradient(#B3B2B6, #878593, #B3B2B6);
+    vertical-align: top;
+    color: white;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.circleimages{
+    height:40px;
+    width:40px;
+    padding:5px;
+    display:inline-block;
+}
+.button{
+    max-height: 25px;
+    width: 60px;
+    background-color: #407D61;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #8A8B8B;
+    border: 1px solid #1F4533;
+    text-align: center;
+    padding: 2px 0px;
+}
+#footer{
+ height: 60px;
+ width:920px;
+ text-align:center;
+ vertical-align: top;
+ font-family:arial;
+ font-size:16px;
+ line-height:24px;
+ background-color: #F7F7F7;
+}
+#footer a{
+    color: black;
+    font-style: italic;
+    padding: 0px 0px;
+}
+.minipics{
+	width:20px;
+	height:20px;
+	border-radius:2px;
+}

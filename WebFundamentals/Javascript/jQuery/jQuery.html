@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>jQuery Basics</title>
+      <link rel="stylesheet" href="jQuery.css">
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+      </script>
+      <script>
+          $(document).ready(function(){
+              $("#show_hide").click(function(){
+                  $("#img1").fadeOut();
+              })
+              $("#show_hide").click(function(){
+                  $("#img1").show();
+              })
+              $("#hover").hover(function(){
+                  $("#bgImg").css("background-color", "red");
+                  $("#bgImg").css("color", "black");
+              })
+              $("#hover").on("mouseleave", function(){
+                  $("#bgImg").css("background-color", "blue");
+                  $("#bgImg").css("color", "white");
+              })
+              $("#toggle").click(function(){
+                  $( "#list1" ).toggle();
+              })
+              $("#slidetoggle").click(function(){
+                  $( "#list2" ).slideToggle();
+              })
+              $("#fade").click(function(){
+                  $("#img2").hide();
+              })
+              $("#fade").click(function(){
+                  $("#img2").fadeIn(5000);
+              })
+              $("#addClass").click(function(){
+                  $("a").addClass("red");
+              })
+              $("#after").click(function(){
+                  $("#para1").after("<p> Text!!!!!</p>");
+              })
+              $("#before").click(function(){
+                  $("#para2").before("<p> Text!!!!!</p>");
+              })
+              $("#append").click(function(){
+                  $("#para3").append("<p> This seems very similar to after!</p>");
+              })
+              $("#add_html").click(function(){
+                  $("#para4").html("<p class='green'>This text has <b>CHANGED</b> and is <b>GREEN</b>!!</p>");
+              })
+              $("#attr").click(function(){
+                  var src=$("#arsenal").attr('src');
+                  var alt_src=$("#arsenal").attr("data-alt-src");
+                  $("#arsenal").attr("data-alt-src", src);
+                  $("#arsenal").attr("src", alt_src);
+              })
+              $( "#value" ).keyup(function() {
+                  var value = $( this ).val();
+                  $( "#para7" ).text( value );
+              })
+              .keyup();
+              $( "#text1" ).click(function() {
+                  var str = $( "#para9" ).text();
+                  $( "#para10" ).html( str );
+              })
+              $( "#para11" ).data( "test", { first: 16, last: "pizza!" } );
+              $( "#span1" ).text( $( "#para11" ).data( "test" ).first );
+              $( "#span2" ).text( $( "#para11" ).data( "test" ).last );
+          })
+      </script>
+   </head>
+   <body>
+       <div id="wrapper">
+        <div class="example">
+            <h2>FadeOut/Show</h2>
+            <button id="show_hide" type="button" name="button">FadeOut/Show</button>
+            <p>This button will hide or show an image.</p>
+            <img id="img1" src="ninja.jpeg" alt="Ninja">
+        </div>
+        <div class="example" id="bgImg">
+            <h2>Hover</h2>
+            <button id="hover" type="button" name="button">Hover</button>
+            <p>Change background by hoving over button.</p>
+        </div>
+        <div class="example">
+            <h2>Toggle</h2>
+            <button id="toggle" type="button" name="button">Toggle</button>
+            <p>Toggle a list</p>
+                <ul id="list1">
+                    <li>Item1</li>
+                    <li>Item2</li>
+                    <li>Item3</li>
+                </ul>
+
+        </div>
+        <div class="example">
+            <h2>Slide Toggle</h2>
+            <button id="slidetoggle" type="button" name="button">SlideToggle</button>
+            <p>Slide toggle this other list</p>
+                <ul id="list2">
+                    <li>Item4</li>
+                    <li>Item5</li>
+                    <li>Item6</li>
+                </ul>
+
+        </div>
+        <div class="example">
+            <h2>Hide and Fade In</h2>
+            <button id="fade" type="button" name="button">Hide and FadeIn</button>
+            <p>This button will Fade In or Fade Out an image.</p>
+            <img id="img2" src="ninja.jpeg" alt="Ninja">
+        </div>
+        <div class="example">
+            <h2>Add Class</h2>
+            <button id="addClass" type="button" name="button">Add Class</button>
+            <p>This button will add the class red to the links.</p>
+            <a href="#"> Link 1</a>
+            <a href="#"> Link 2</a>
+            <a href="#"> Link 3</a>
+        </div>
+        <div class="example">
+            <h2>Text After</h2>
+            <button id="after" type="button" name="button">Text After</button>
+            <p id="para1">This button will add text after this paragragh everytime you click.</p>
+        </div>
+        <div class="example">
+            <h2>Text Before</h2>
+            <button id="before" type="button" name="button">Text Before</button>
+            <p id="para2">This button will add text before this paragragh everytime you click.</p>
+        </div>
+        <div class="example">
+            <h2>Append Text</h2>
+            <button id="append" type="button" name="button">Append</button>
+            <p id="para3">This button will append text to this paragragh everytime you click.</p>
+        </div>
+        <div class="example">
+            <h2>Add HTML</h2>
+            <button id="add_html" type="button" name="button">Add HTML</button>
+            <p id="para4">This button will change the current paragraph's HTML.</p>
+        </div>
+        <div class="example">
+            <h2>Attribute</h2>
+            <button id="attr" type="button" name="button">Switch</button>
+            <p id="para5">This button will change the two images below:</p><br>
+            <img id=arsenal style="display:block" src="img/arsenal.jpeg" data-alt-src="img/henry.jpeg">
+        </div>
+        <div class="example">
+            <h2>Value</h2>
+            <input id="value" type="text" name="text box">
+            <p id="para6">The input you enter will appear in the paragraph below:</p>
+            <br><p id="para7"></p>
+        </div>
+        <div class="example">
+            <h2>Text</h2>
+            <button id="text1" type="button" name="button">Strip</button>
+            <p id="para8">Click the button to take the text of the below paragraph, strip it's tags,
+                and show the result in another paragraph:</p>
+            <br><p id="para9"><b>This</b><span class="green"> text</span><i> has</i> <u>many</u> tags.</p>
+            <br><p id="para10"></p>
+        </div>
+        <div class="example">
+            <h2>Data</h2>
+            <br><p id="para11">The value stored in this were <span class="red" id="span1">
+            </span> and <span class="red" id="span2"></span></p>
+        </div>
+       </div>
+   </body>
+</html>

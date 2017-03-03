@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Street Fighter</title>
+      <link rel="stylesheet" href="streetFighter.css">
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+      </script>
+      <script>
+          $(document).ready(function(){
+              $("#beach").on("mouseenter", function(){
+                  $("#wrapper").css("background-image", "url(dojo_arena_photos-master/beach.jpg)");
+                  $(this).css("border", "2px solid rgba(81, 203, 238, 1)");
+                  $(this).css("box-shadow", "0px 0px 20px rgba(81, 203, 238, 1)");
+              })
+              $("#beach").on("mouseleave", function() {
+                  $(this).css("border", "1px solid gray")
+                  $(this).css("box-shadow", "none")
+              })
+              $("#planet").on("mouseenter", function() {
+                  $("#wrapper").css("background-image", "url(dojo_arena_photos-master/earth.jpg)");
+                  $(this).css("border", "2px solid rgba(81, 203, 238, 1)");
+                  $(this).css("box-shadow", "0 0 20px rgba(81, 203, 238, 1)");
+              })
+              $("#planet").on("mouseleave", function() {
+                  $(this).css("border", "1px solid gray");
+                  $(this).css("box-shadow", "none");
+              })
+              $("#dojo").hover(function() {
+                  $("#wrapper").css("background-image", "url(dojo_arena_photos-master/dojo.jpg)");
+                  $(this).css("border", "2px solid rgba(81, 203, 238, 1)");
+                  $(this).css("box-shadow", "0 0 20px rgba(81, 203, 238, 1)");
+              })
+              $("#dojo").on("mouseleave", function() {
+                  $(this).css("border", "1px solid gray");
+                  $(this).css("box-shadow", "none");
+              })
+              $("#forest").hover(function() {
+                  $("#wrapper").css("background-image", "url(dojo_arena_photos-master/forest.jpg)");
+                  $(this).css("border", "2px solid rgba(81, 203, 238, 1)");
+                  $(this).css("box-shadow", "0 0 20px rgba(81, 203, 238, 1)");
+              })
+              $("#forest").on("mouseleave", function() {
+                  $(this).css("border", "1px solid gray");
+                  $(this).css("box-shadow", "none");
+              })
+              $("#matrix").hover(function() {
+                  $("#wrapper").css("background-image", "url(dojo_arena_photos-master/matrix.jpg)");
+                  $(this).css("border", "2px solid rgba(81, 203, 238, 1)");
+                  $(this).css("box-shadow", "0 0 20px rgba(81, 203, 238, 1)");
+
+              })
+              $("#matrix").on("mouseleave", function() {
+                  $(this).css("border", "1px solid gray");
+                  $(this).css("box-shadow", "none");
+              })
+              $("#snow").hover(function() {
+                  $("#wrapper").css("background-image", "url(dojo_arena_photos-master/snow.jpg)");
+                  $(this).css("border", "2px solid rgba(81, 203, 238, 1)");
+                  $(this).css("box-shadow", "0 0 20px rgba(81, 203, 238, 1)");
+              })
+              $("#snow").on("mouseleave", function() {
+                  $(this).css("border", "1px solid gray");
+                  $(this).css("box-shadow", "none");
+              })
+              $("#beach").click(function() {
+                  $("#arena_menu").hide();
+              })
+              $("#planet").click(function() {
+                  $("#arena_menu").hide();
+              })
+              $("#dojo").click(function() {
+                  $("#arena_menu").hide();
+              })
+              $("#forest").click(function() {
+                  $("#arena_menu").hide();
+              })
+              $("#matrix").click(function() {
+                  $("#arena_menu").hide();
+              })
+              $("#snow").click(function() {
+                  $("#arena_menu").hide();
+              })
+          })
+      </script>
+   </head>
+   <body>
+       <div id="wrapper">
+            <div id="arena_menu">
+                <p>Select Arena</p>
+                <div id="arenas">
+                    <button class="arena" id=beach type="button" name="button">Beach</button>
+                    <button class="arena" id=planet type="button" name="button">Planet</button>
+                    <button class="arena" id=dojo type="button" name="button">Dojo</button>
+                    <button class="arena" id=forest type="button" name="button">Forest</button>
+                    <button class="arena" id=matrix type="button" name="button">Matrix</button>
+                    <button class="arena" id=snow type="button" name="button">Snow</button>
+                </div>
+            </div>
+       </div>
+   </body>
+</html>
