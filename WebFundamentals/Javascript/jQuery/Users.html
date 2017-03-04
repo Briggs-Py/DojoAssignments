@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="contactCard.css">
+        <title>Position Practice</title>
+
+    <style>
+
+      #wrapper{
+            margin:10px;
+            padding:10px;
+            width:700px;
+            display:inline;
+            height:400px;
+      }
+      #table {
+            border: 1px solid black;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 30px;
+
+      }
+      #form {
+            display:inline-block;
+            width:300px;
+            padding: 20px;
+
+      }
+      #form input{
+            display:inline-block;
+            margin:20px;
+            width:120px;
+      }
+      </style>
+      <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+      <script>
+          $(document).ready(function(){
+                  $('form').submit(function() {
+                        var firstname = $('#first_name').val();
+                        var lastname = $('#last_name').val();
+                        var email = $('#email').val();
+                        var phone = $("#phone").val();
+
+                        $('#table').children("tbody").append("<tr><td>" + firstname + '</td><td>' + lastname + '</td><td>' + email + "</td><td>" + phone + "</td></tr>");
+                        return false;
+                    });
+                    $("button").click(function() {
+                        $("tbody").remove();
+                        $("table").append("<tbody></tbody>");
+                    });
+
+  	      });
+          </script>
+          </head>
+            <body>
+                <div id="wrapper">
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>FirstName</th>
+                                <th>LastName</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                              <form>
+                                    First Name<input type='text' placeholder='First Name' id="first_name">
+                                    <br>
+                                    Last Name<input type='text' placeholder='Last Name' id="last_name">
+                                    <br>
+                                    E-Mail<input type='text' placeholder='Email' id="email">
+                                    <br>
+                                    Phone<input type='text' placeholder='Phone' id="phone">
+                                    <br>
+                                    Add User<input type="submit" name="Submit" value="Submit">
+                                    <br>
+                                    <button id="reset">Reset</button>
+                              </form>
+
+                  </div>
+            </body>
+</html>

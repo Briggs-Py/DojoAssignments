@@ -1,12 +1,11 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Position Practice</title>
-
-        <style>
+<meta charset="utf-8">
+      <title>Contact Card</title>
+      <style>
 
       #wrapper {
+
             margin:10px;
             padding:10px;
             width:700px;
@@ -14,75 +13,124 @@
             height:400px;
       }
       #table {
-            border: 1px solid black;
-            padding-left: 20px;
-            padding-right: 20px;
-            margin-bottom: 30px;
-
+            display:inline-block;
+            margin:0px;
+            padding:0px;
       }
       #form {
             display:inline-block;
             width:300px;
-            padding: 20px;
-
       }
-      #form input{
+      #form input {
             display:inline-block;
             margin:20px;
             width:120px;
+            vertical-align:middle;
       }
-      </style>
+      h1 {
+            display:inline-block;
+
+      }
+      p {
+            display:inline-block;
+
+      }
+      #box {
+            display:inline-block;
+            border:2px solid black;
+            width:300px;
+            height:200px;
+            vertical-align:top;
+            position:relative;
+            left:800px;
+            bottom:300px;
+            text-align:center;
+            margin-bottom: 20px;
+
+      }
+      #third {
+            display:inline-block;
+            width:450px;
+            height:100px;
+            padding-right: 130px;
+      }
+}
+</style>
       <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-      <script>
-          $(document).ready(function(){
+      <script type='text/javascript'>
+      $(document).ready(function(){
+
+
                   $('form').submit(function() {
-                        var firstname = $('#first_name').val();
-                        var lastname = $('#last_name').val();
-                        var email = $('#email').val();
-                        var phone = $("#phone").val();
+                        alert('Thanks for your info!');
+                        var frm1 = $('#first', $(this)).val();
+                        var frm2 = $('#second', $(this)).val();
+                        var frm3 = $('#third', $(this)).val();
 
-                        $('#table').children("tbody").append("<tr><td>" + firstname + '</td><td>' + lastname + '</td><td>' + email + "</td><td>" + phone + "</td></tr>");
+                        // var frm1 = $('form[name="first_name"]');
+
+                        console.log(frm1);
+
+                        $('#add').append("<div id='box'>" + '<h1>' + frm1 + '</h1>' + ' ' + '<h1>' + frm2 + '</h2>' + '<br>' + "<p class='btn'>" + 'Click for description!' + '</p>' + '</div>' + '<br>' );
+                       $('.btn').click(function() {
+                        $('#add').html("<div id='box'>" + '<p>' + frm3 + '</p>' + '</div>');
+                       })
+
+
+                        // $(document).on('click','.btn')
+                        //       $('#box').html('<p>' + frm3 + '</p>');
+
+                        // $('#add tr:empty').append('<td>frm2</td.');
+                        // $('#add tr:empty).append('<td>frm3</td>');
+                        // $('#add tr:empty:first').append('<td>frm4</td>');
                         return false;
-                    });
-                    $(document).on("click", "button", function() {
-                        $('#table').find("tbody").remove();
-                        $("#table").append("<tbody></tbody>");
 
-                    });
 
-  	      });
-          </script>
-          </head>
+
+
+
+              })
+
+
+
+
+
+
+
+
+
+  	})
+  </script>
+      </head>
             <body>
-                <div id="wrapper">
-                    <table id="table">
-                        <thead>
-                            <tr>
-                                <th>FirstName</th>
-                                <th>LastName</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-
+                  <div id="wrapper">
+                        <div id="form">
                               <form>
-                                    First Name<input type='text' placeholder='First Name' id="first_name">
+                                    Firstname<input type='text' name='first_name' id="first">
                                     <br>
-                                    Last Name<input type='text' placeholder='Last Name' id="last_name">
+                                    Last Name<input type='text' name='last_name' id="second">
                                     <br>
-                                    E-Mail<input type='text' placeholder='Email' id="email">
+                                    <p>Description</p>
                                     <br>
-                                    Phone<input type='text' placeholder='Phone' id="phone">
+                                    <input type='text' name='description' id="third">
                                     <br>
-                                    Add User<input type="submit" name="Submit" value="Submit">
-                                    <br>
-                                    <button id="reset">Reset</button>
+                                    <input id="submit" type='submit' value='Add User'>
                               </form>
-
+                        </div>
+                        <div id="add">
+                        </div>
                   </div>
             </body>
+
+
+
+
+
+
+
+
+
+
+
+
 </html>
