@@ -10,8 +10,10 @@
 }
 #pokedex{
     display:inline-block;
-    width: 350px;
+    position:fixed;
+    width: 250px;
     height:500px;
     border: 10px solid black;
     vertical-align: top;
+    padding-left: 20px;
 }

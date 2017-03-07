@@ -1,0 +1,8 @@
+1. pip Install = installs a specific package that works with python.
+2. pip list = Gives a list of currently installed packages.
+3. pip install (after package install) = shows requirement already specified.
+4. pip freeze = gives a list of installed packages and shows version requirement.
+5. pip freeze > requirements.txt = creates a .txt file and adds the list created with pip freeze within it.
+6. pip show = Show the current version and basic info about the package.
+7. pip uninstall = uninstalls a specific package.
+8. pip search = searches the package library.

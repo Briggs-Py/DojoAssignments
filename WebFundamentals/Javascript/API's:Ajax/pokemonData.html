@@ -11,26 +11,28 @@
                 $("#pokemon").append("<img id="+num+" src='http://pokeapi.co/media/img/"+num+".png'>");
             }
 
-            $("img").click(function(){
-                var j = $(this).attr("id");
+            $("img").hover(function(){
+                var j = this.id;
                 $.get("http://pokeapi.co/api/v1/pokemon/"+j+"/", function(res){
-                    for(var i = 0; i< res.types.length; i++){
-                        console.log(res.types.name);
-                    }
-
+                     var html_str = "";
+                     html_str += "<h2>" + res.name + "</h2>"
+                     html_str += "<img id="+j+" src='http://pokeapi.co/media/img/"+j+".png'>"
+                     html_str += "<h4>Types</h4>";
+                     html_str += "<ul>";
+                     for(var i = 0; i < res.types.length; i++) {
+                         html_str += "<li>" + res.types[i].name + "</li>";
+                     }
+                     html_str += "</ul>";
+                     html_str += "<h4>Height</h4>"
+                     html_str += res.height + " pokeInches"
+                     html_str += "<h4>Weight</h4>"
+                     html_str += res.weight + " lbs"
+                     $("#pokedex").html(html_str);
+                     console.log(res);
                 })
 
             })
-            // $.get("http://pokeapi.co/api/v1/pokemon/1/", function(res) {
-            //         var html_str = "";
-            //         html_str += "<h4>Types</h4>";
-            //         html_str += "<ul>";
-            //         for(var i = 0; i < res.types.length; i++) {
-            //             html_str += "<li>" + res.types[i].name + "</li>";
-            //         }
-            //         html_str += "</ul>";
-            //         $("#bulbasaur").html(html_str);
-            //     }, "json");
+
         })
         </script>
     </head>
