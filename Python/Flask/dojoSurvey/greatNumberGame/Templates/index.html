@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Awesome Number Game</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+	<h1>Welcome to the Great Number Game!</h1>
+	<p>I am thinking of a number between 1 and 100.</p>
+	<p>Try and guess!</p>
+
+	{% if message %}
+		{% if message == 'Too low!' or message == 'Too high!' %}
+			<div class="red">
+				{{ message }}
+			</div>
+			<form action="/result" method="POST">
+				<input type="text" name="number" />
+				<button>Submit</button>
+			</form>
+		{% else %}
+			<div class="green">
+				{{ message }}
+				<form action="/reset" method="GET">
+					<button>Play again!</button>
+				</form>
+			</div>
+		{% endif %}
+	{% else %}
+		<form action="/result" method="POST">
+			<input type="text" name="number" />
+			<button>Submit</button>
+		</form>
+	{% endif %}
+</body>
+</html>

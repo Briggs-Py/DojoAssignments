@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dojo Survey</title>
+</head>
+<body>
+	<h1>Dojo Survey</h1>
+	<div>
+		<form action="/results" method="POST">
+			<p>Name</p>
+			<input type="text" name="name" placeholder="Your Name">
+			<p>Dojo Location</p>
+			<input type="text" name="location" placeholder="Location">
+			<p>Favorite Language</p>
+			<input type="text" name="language" placeholder="Language">
+			<p>Comment</p>
+			<textarea name="comment" rows="8" cols="80" placeholder="Enter Text"></textarea>
+			<input type="submit" value="Submit" name="submit">
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Gold</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <h1>Ninja Gold!</h1>
+        <div id="header">
+            <p id='gold'>Your Gold:</p>
+            <p id='goldBg'>{{ gold }}</p>
+        </div>
+        <div id="Places">
+            <div class="place">
+                <h4>Farm</h4>
+                <p>(earns 10-20 gold)</p>
+                <form class="" action="/process" method="post">
+                    <input type="hidden" name="building" value="farm">
+                    <input type="submit" name="farm" value="Find Gold!">
+                </form>
+            </div>
+            <div class="place">
+                <h4>Cave</h4>
+                <p>(earns 5-10 gold)</p>
+                <form class="" action="/process" method="post">
+                    <input type="hidden" name="building" value="cave">
+                    <input type="submit" name="cave" value="Find Gold!">
+                </form>
+            </div>
+            <div class="place">
+                <h4>House</h4>
+                <p>(earns 2-5 gold)</p>
+                <form class="" action="/process" method="post">
+                    <input type="hidden" name="building" value="house">
+                    <input type="submit" name="house" value="Find Gold!">
+                </form>
+            </div>
+            <div class="place">
+                <h4>Casino</h4>
+                <p>(earns/takes 0-50 gold)</p>
+                <form class="" action="/process" method="post">
+                    <input type="hidden" name="building" value="casino">
+                    <input type="submit" name="casino" value="Find Gold!">
+                </form>
+            </div>
+        </div>
+        <div id="activity">
+            <p>Activity:</p>
+            <!-- {% if not 'message' in session:%}
+                {% 'textList' = [] %}
+                <p id="actBox">{{ textList }}</p>
+            {% else: %}
+                {% 'textList' += 'message' %} -->
+                <p id="actBox">{{ textList }}</p>
+            <!-- {% endif %} -->
+        </div>
+
+    </body>
+</html>
