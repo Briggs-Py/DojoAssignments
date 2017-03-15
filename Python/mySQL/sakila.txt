@@ -1,0 +1,18 @@
+1. SELECT city.city_id, city.city, customer.first_name, customer.last_name, address.address FROM city
+JOIN address ON address.city_id = city.city_id
+JOIN customer ON customer.address_id = address.address_id
+WHERE city.city_id = 312;
+
+2. SELECT film.title, film.description, film.release_year, film.rating, film.special_features, category.name
+FROM film
+JOIN film_category ON film.film_id = film_category.film_id
+JOIN category ON category.category_id = film_category.category_id
+WHERE category.name = “Comedy”;
+
+3. SELECT CONCAT(actor.first_name, “ “, actor.last_name) AS actor_name, film.film_id, film.title, film.description, film.release_year
+FORM film
+JOIN film_actor ON film.film_id = film_actor.film_id
+JOIN actor ON film_actor.actor_id = actor.actor_id
+WHERE actor.actor_id = 5;
+
+4. SELECT customer

@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <!-- <link rel="stylesheet" type="text/css" href="../static/style.css"> -->
+  </head>
+  <body>
+    <div id='suc'>
+      <h1>Success!</h1>
+    </div>
+    <h2>Emails:</h2>
+    {{session['validEmail']|safe}}
+  </body>
+  </html>

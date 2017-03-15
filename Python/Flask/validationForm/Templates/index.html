@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Survey</title>
+		<style>
+			#wrapper{
+				margin-left: auto;
+				margin-right: auto;
+				padding: 5px;
+				width: 350px;
+				height: 300px;
+				border: 2px solid black;
+			}
+			#flash{
+				text-align: center;
+				background-color: red;
+				border-radius: 10px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "wrapper">
+				{% with messages = get_flashed_messages() %}
+    				{% if messages %}
+						<div id="flash">
+      					{% for message in messages %}
+        					<p>{{message}}</p>
+      					{% endfor %}
+						</div>
+    				{% endif %}
+  				{% endwith %}
+			<form action = "/result" method = "post">
+				<label for="name">Your Name:</label>
+				<input type = "text" name = "name">
+				<br>
+				<label for="dojo">Dojo Location:</label>
+				<select name = "dojo">
+					<option value = "San Jose">San Jose</option>
+					<option value = "Seattle">Seattle</option>
+					<option value = "Los Angeles">Los Angeles</option>
+				</select>
+				<br>
+				<label for="language">Favorite Language:</label>
+				<select name = "language">
+					<option value = "Python">Python</option>
+					<option value = "JavaScript">JavaScript</option>
+					<option value = "C#">C#</option>
+					<option value = "C++">C++</option>
+					<option value = "Ruby">Ruby</option>
+					<option value = "Java">Java</option>
+				</select>
+				<br>
+				<p>Comment (optional, no more than 140 characters):</p>
+				<textarea name = "comment"></textarea>
+				<input type = "submit" value = "Submit">
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Survey</title>
+		<style>
+			.{
+				margin: 0px;
+				padding: 0px;
+			}
+			#wrapper{
+				margin-left: auto;
+				margin-right: auto;
+				padding: 3px;
+				width: 300px;
+				/*height: 250px;*/
+				border: 2px solid black;
+			}
+			#text{
+				width: 230px;
+				overflow-y: scroll;
+			}
+		</style>
+	</head>
+	<body>
+		<div id = "wrapper">
+			<h3>Submitted Info</h3>
+			<p>Name: {{ session['name'] }}
+			<p>Dojo Location: {{ session['dojo'] }}</p>
+			<p>Favorite Language: {{ session['language'] }}</p>
+			<div id="text">
+				<p>Comment: {{ session['comment'] }}</p>
+			</div>
+			<form action = "/back" method = "post">
+				<input id = "button" type = "submit" value = "Go Back">
+			</form>
+		</div>
+	</body>
+</html>

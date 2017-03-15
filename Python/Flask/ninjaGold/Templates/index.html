@@ -9,7 +9,7 @@
         <h1>Ninja Gold!</h1>
         <div id="header">
             <p id='gold'>Your Gold:</p>
-            <p id='goldBg'>{{ gold }}</p>
+            <p id='goldBg'>{{ session['gold'] }}</p>
         </div>
         <div id="Places">
             <div class="place">
@@ -45,15 +45,9 @@
                 </form>
             </div>
         </div>
+        <p>Activity:</p>
         <div id="activity">
-            <p>Activity:</p>
-            <!-- {% if not 'message' in session:%}
-                {% 'textList' = [] %}
-                <p id="actBox">{{ textList }}</p>
-            {% else: %}
-                {% 'textList' += 'message' %} -->
-                <p id="actBox">{{ textList }}</p>
-            <!-- {% endif %} -->
+            {{ session['message']| safe }}
         </div>
 
     </body>

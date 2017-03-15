@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Survey</title>
+		<style>
+			#wrapper{
+				margin-left: auto;
+				margin-right: auto;
+				padding: 10px;
+				width: 350px;
+				border: 2px solid black;
+                border-radius: 5px;
+				background-color: lightblue;
+			}
+			.error{
+			    text-align: center;
+				background-color: red;
+				border-radius: 10px;
+			}
+            .clear{
+                text-align: center;
+				background-color: green;
+				border-radius: 10px;
+            }
+		</style>
+	</head>
+	<body>
+		<div id = "wrapper">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <p class="{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+			<form action = "/process" method = "post">
+				<label for="name">Email:</label>
+				<input type = "text" name = "email">
+				<br>
+				<label for="dojo">First Name:</label>
+				<input type = "text" name = "first">
+				<br>
+                <label for="name">Last Name:</label>
+				<input type = "text" name = "last">
+				<br>
+				<label for="dojo">Password:</label>
+				<input type = "password" name = "password">
+				<br>
+                <label for="dojo">Confirm Password:</label>
+				<input type = "password" name = "confirm">
+                <input type="submit" name="submit" value="Submit">
+				<br>
+			</form>
+		</div>
+	</body>
+</html>

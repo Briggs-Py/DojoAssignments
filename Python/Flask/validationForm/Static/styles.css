@@ -28,12 +28,8 @@ h1{
     text-align: center;
     margin: 0px 30px;
 }
-#activity{
-    width: 800px;
-    height: 250px;
-    overflow-y: scroll;
+#actBox{
+    width: 900px;
+    height: 200px;
     border: 2px solid black;
-}
-#activity p{
-    margin: 5px 5px;
 }
