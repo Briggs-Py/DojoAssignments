@@ -75,36 +75,38 @@
         <div id="wrapper">
             <div id="header">
                 <h1>CodingDojo: <i>The Wall</i></h1>
-                <p>Hello {{  username  }}</p>
-                <a href="#">Log Off</a>
+                <p>Hello, {{  session['name']  }}</p>
+                <a href="/logout">Log Off</a>
             </div>
             <div class="post">
-                {% with messages = get_flashed_messages() %}
-    				{% if messages %}
-						<div id="flash">
-      					{% for message in messages %}
-        					<p>{{message}}</p>
-      					{% endfor %}
-						</div>
-    				{% endif %}
-  				{% endwith %}
                 <h3>Post a message</h3>
                 <form class="" action="/post" method="post">
                     <textarea name="post" rows="8" cols="80"></textarea>
                     <input type="submit" name="" value="Post message">
                 </form>
             </div>
-            <div id="postContent">
-                <p>{{session['posts']}}</p>
-                <div class="post">
-                    <h4>Post a comment</h4>
-                    <form class="" action="/comment" method="post">
-                        <textarea id="commentbox" name="name" rows="8" cols="80"></textarea>
-                        <input id="subComment" type="submit" name="" value="Post comment">
-                    </form>
-                </div>
+            {{comments}}
+            {% for message in messages %}
+            	<div class="message" style="border:1px solid black;">
+            		<p><h3>{{ message['name'] }}</h3> - {{ message['created_at'].strftime('%B %d %Y') }}</p>
+            		<p>{{ message['message'] }}</p>
+            		<div class="comments">
+            			{% for comment in message['comments'] %}
+            				<div class="comment">
+            					<p><h4>{{ comment['name'] }}</h4> - {{ message['created_at'].strftime('%B %d %Y') }}</p>
+            					<p>{{ comment['comment'] }}</p>
+            				</div>
+            			{% endfor %}
+            		</div>
+            {% endfor %}
+            <div class="post">
+                <h4>Post a comment</h4>
+                <form class="" action="/comment" method="post">
+                    <input type="hidden" name="post_id" value="{{ message['id'] }}">
+                    <textarea id="commentbox" name="name" rows="8" cols="80"></textarea>
+                    <input id="subComment" type="submit" name="" value="Post comment">
+                </form>
             </div>
-
         </div>
     </body>
 </html>

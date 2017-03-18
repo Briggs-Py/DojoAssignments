@@ -33,7 +33,7 @@
                 padding-left: 120px;
             }
             input{
-                margin: 5px;
+                margin: 2px;
                 display: inline-block;
             }
             #loginbutton{
@@ -61,13 +61,13 @@
     				{% endif %}
   				{% endwith %}
                 <h2>The Wall Login</h2>
-                <form action="/process" method="post">
-                    <label for="email">Email</label>
+                <form action="/login" method="post">
+                    <label for="email">Email:</label>
                     <input type="text" name="email" placeholder="Email">
-                    <label for="password">Password</label>
+                    <label for="password">Password:</label>
                     <input type="password" name="password" placeholder="Password">
                     <input id="loginbutton" type="submit" name="login" value="Login"> or
-                    <a href="/createaccount">Create Account</a>
+                    <a href="/createAccount">Create Account</a>
                 </form>
             </div>
         </div>

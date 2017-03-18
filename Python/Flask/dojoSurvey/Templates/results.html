@@ -6,10 +6,18 @@
     </head>
     <body>
         <h1>Your Dojo Survey Results</h1>
-        <p>{{ name }}</p>
-        <p>{{ location }}</p>
-        <p>{{ language }}</p>
-        <p>{{ comment }}</p>
+        {{ messages }}
+        {% if messages %}
+        <ul class="messages">
+           {% for message in messages %}
+           <li>{{ message }}</li>
+           {% endfor %}
+        </ul>
+        {% endif %}
+        <p>{{ request.session.name }}</p>
+        <p>{{ request.session.location }}</p>
+        <p>{{ request.session.language }}</p>
+        <p>{{ request.session.comment }}</p>
         <form action="/goback">
             <input type="submit" name="goBack" value="Go Back">
         </form>

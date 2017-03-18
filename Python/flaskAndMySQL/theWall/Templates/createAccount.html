@@ -27,22 +27,22 @@
 	</head>
 	<body>
 		<div id = "wrapper">
-            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% with messages = get_flashed_messages() %}
                 {% if messages %}
-                    {% for category, message in messages %}
-                        <p class="{{ category }}">{{ message }}</p>
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
                     {% endfor %}
                 {% endif %}
             {% endwith %}
-			<form action = "/process" method = "post">
-				<label for="name">Email:</label>
-				<input type = "text" name = "email">
-				<br>
+			<form action = "/register" method = "post">
 				<label for="dojo">First Name:</label>
 				<input type = "text" name = "first">
 				<br>
                 <label for="name">Last Name:</label>
 				<input type = "text" name = "last">
+				<br>
+				<label for="name">Email:</label>
+				<input type = "text" name = "email">
 				<br>
 				<label for="dojo">Password:</label>
 				<input type = "password" name = "password">

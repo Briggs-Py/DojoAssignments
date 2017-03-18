@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo Survey</title>
+    </head>
+    <body>
+        <h1>Dojo Survey</h1>
+    	<div id=wrapper>
+            {% if messages %}
+           <ul class="messages">
+               {% for message in messages %}
+               <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+               {% endfor %}
+           </ul>
+           {% endif %}
+    		<form action="/process" method="POST">
+            {% csrf_token %}
+    			<p>Name:</p>
+    			<input type="text" name="name" placeholder="Your Name">
+    			<p>Dojo Location:</p>
+    			<select name="location">
+                    <option value="Burbank">Burbank</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Orange County">Orange County</option>
+    			</select>
+    			<p>Favorite Language:</p>
+                <select name="language">
+                    <option value="Python">Python</option>
+                    <option value="Ruby">Ruby</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Java">Java</option>
+                    <option value="C++">C++</option>
+                    <option value="C#">C#</option>
+                    <option value="MEAN">MEAN</option>
+                </select>
+    			<p>Comment:</p>
+    			<textarea name="comment" rows="8" cols="80" placeholder="Enter Text"></textarea>
+    			<input type="submit" value="Submit" name="submit">
+    		</form>
+    	</div>
+    </body>
+</html>

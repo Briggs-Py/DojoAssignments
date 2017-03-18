@@ -1,0 +1,5 @@
+USE[sakila]
+SELECT * FROM films;
+INSERT INTO film (title, author, created_at, updated_at) VALUES (‘Akira’, ‘Ohani Fashoso’, NOW(), NOW());
+DELETE FROM  fil WHERE id = 76;
+UPDATE films SET author = ‘Bobby Castro’ WHERE id = 234;

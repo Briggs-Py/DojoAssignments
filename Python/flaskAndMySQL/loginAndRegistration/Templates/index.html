@@ -3,29 +3,65 @@
     <head>
         <meta charset="utf-8">
         <title>Login & Registration</title>
+        <style>
+            #wrapper{
+                background-color: lightblue;
+            }
+            #register{
+                /*display: inline-block;*/
+                margin-left: auto;
+                margin-right: auto;
+                width: 670px;
+            }
+            #Login{
+                display: inline-block;
+                margin-left: 200px;
+            }
+            h3{
+                text-align: center;
+            }
+            form{
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <div id="flash">
-                {% for message in messages %}
-                    <p>{{message}}</p>
-                {% endfor %}
-                </div>
-            {% endif %}
-        {% endwith %}
-        <form action="/register" method="post">
-            <label for="first_name">First Name</label>
-            <input type="text" name="first_name">
-            <label for="last_name">Last Name</label>
-            <input type="text" name="las_name">
-            <label for="email">Email</label>
-            <input type="email" name="email">
-            <label for="password">Password</label>
-            <input type="password" name="password">
-            <label for="confirm">Confirm Password</label>
-            <input type="password" name="confirm">
-            <button>Submit</button>
-        </form>
+        <div id="wrapper">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div id="flash">
+                    {% for message in messages %}
+                        <p>{{message}}</p>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <div id="register">
+                <h3>Register</h3>
+                <form action="/register" method="post">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" name="first_name">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" name="last_name">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password">
+                    <label for="confirm">Confirm Password:</label>
+                    <input type="password" name="confirm">
+                    <button>Submit</button>
+                </form>
+            </div>
+            <div id="Login">
+                <h3>Login</h3>
+                <form action="/login" method="post">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password">
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
     </body>
 </html>

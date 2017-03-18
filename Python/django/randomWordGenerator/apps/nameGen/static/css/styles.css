@@ -1,0 +1,39 @@
+h1{
+    text-align: center;
+}
+#header{
+    padding-left: 15px;
+}
+
+#gold{
+    display: inline-block;
+}
+#goldBg{
+    background-color: gold;
+    display: inline-block;
+    width: 70px;
+    border-radius: 4px;
+
+}
+
+#Places{
+    width:920px;
+    height: auto;
+}
+.place{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    text-align: center;
+    margin: 0px 30px;
+}
+#activity{
+    width: 800px;
+    height: 250px;
+    overflow-y: scroll;
+    border: 2px solid black;
+}
+#activity p{
+    margin: 5px 5px;
+}
