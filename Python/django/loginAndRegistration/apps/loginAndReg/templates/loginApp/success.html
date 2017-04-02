@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Success!</title>
+    </head>
+    <body>
+        <h2>Logged In</h2>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <h3>Emails in DB</h3>
+        {% for email in emails%}
+            <p>{{email.first_name}} {{email.last_name}}, {{email.email}}, {{email.password}}, {{email.created_at}}</p>
+        {% endfor %}
+        <form action="/logout">
+            <button>Log Out</button>
+        </form>
+    </body>
+</html>

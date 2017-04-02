@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>The Wall</title>
+    <!-- {% load staticfiles %} -->
+    <!-- <link rel="stylesheet" href="{% static '/css/profile.css' %}" /> -->
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h1>Dashboard</h1>
+            {% if messages %}
+           <ul class="messages">
+               {% for message in messages %}
+               <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+               {% endfor %}
+           </ul>
+           {% endif %}
+            <p>Registered: {{ request.session.register }}</p>
+            <p>User ID: {{ request.session.id }}</p>
+            <p>Email address: {{ request.session.email }}</p>
+        </div>
+        <div class="post">
+            <h3>Post a message</h3>
+            <form class="" action="post/{{ request.session.id }}" method="post">
+            {% csrf_token %}
+                <textarea name="post" rows="8" cols="80"></textarea>
+                <input type="submit" name="" value="Post message">
+            </form>
+        </div>
+        <div id="post">
+            {% for post in posts %}
+                <h5>{{post.title}}</h5>
+                <p>{{post.post}}</p>
+            {% endfor %}
+        </div>
+
+    </body>
+</html>

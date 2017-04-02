@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static '/css/styles.css' %}" />
+        <title>Products</title>
+    </head>
+    <body>
+        {% if messages %}
+       <ul class="messages">
+           {% for message in messages %}
+           <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+           {% endfor %}
+       </ul>
+       {% endif %}
+        <div id="addCourse">
+            <h2>Add a New Product:</h2>
+            <form action="{% url 'products:process' %}" method="post">
+            {% csrf_token %}
+                Name: <input type="text" name="name">
+                Description: <input type="text" name="description">
+                Price: <input type="text" name="price">
+                <button name="add">Add</button>
+            </form>
+        </div>
+        <div id="coursesTable">
+            <h2>Products</h2>
+            <table>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </tr>
+                {% for course in courses %}
+                    <tr>
+                        <td>{{course.name}}</td>
+                        <td>{{course.description}}</td>
+                        <td>${{course.price}}</td>
+                        <td>{{course.created_at}}</td>
+                        <td id="links"><a href=#>Show</a><a href=#>Edit</a><form style="display: Inline;" action="remove/{{course.id}}" method="post">{% csrf_token %}<button>Remove</button></form></td>
+                    </tr>
+    			{% endfor %}
+            </table>
+        </div>
+    </body>
+</html>

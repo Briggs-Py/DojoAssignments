@@ -1,0 +1,66 @@
+
+   #wrapper{
+        margin-left: auto;
+        margin-right: auto;
+        width: 920px;
+        background-color: lightgreen;
+    }
+    #header{
+        border-bottom: 2px solid black;
+        background-color: lightblue
+    }
+    #header h1{
+        display: inline-block;
+        margin-right: 360px;
+        margin-left: 10px;
+    }
+    #header p{
+
+        display: inline-block;
+        margin-right: 30px
+    }
+    #header a{
+
+        display: inline-block;
+    }
+    .post{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        width: 700px;
+    }
+    .post h3{
+        margin: 5px 0px;
+    }
+    .post h4{
+        margin: 5px 0px 5px 50px;
+    }
+    .post textarea{
+        margin-left: auto;
+        margin-right: auto;
+        width: 700px;
+        height: 70px;
+        border: 2px solid black;
+    }
+    .post input{
+        margin: 10px 0px;
+        margin-left: 610px;
+        box-shadow: 2px 2px 4px gray;
+    }
+    #postContent{
+        margin-left: auto;
+        margin-right: auto;
+        width: 700px;
+    }
+    #commentbox{
+        margin-left: 50px;
+        margin-right: auto;
+        width: 600px;
+        height: 60px;
+        border: 1px solid black;
+    }
+    #subComment{
+        margin: 10px 0px;
+        margin-left: 560px;
+        box-shadow: 2px 2px 4px gray;
+    } 

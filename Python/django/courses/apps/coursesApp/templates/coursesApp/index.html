@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static '/css/styles.css' %}" />
+        <title>Courses</title>
+    </head>
+    <body>
+        {% if messages %}
+       <ul class="messages">
+           {% for message in messages %}
+           <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+           {% endfor %}
+       </ul>
+       {% endif %}
+        <div id="coursesTable">
+            <h2>Products</h2>
+            <table>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </tr>
+                {% for course in courses %}
+                    <tr>
+                        <td>{{course.name}}</td>
+                        <td>{{course.description}}</td>
+                        <td>{{course.created_at}}</td>
+                        <td id=links><a href="/show/{{course.id}}">Show</a> <a href="/remove/{{course.id}}">Edit</a> <a href="/remove/{{course.id}}">Remove</a></td>
+                    </tr>
+    			{% endfor %}
+            </table>
+            <a href="/new">Add A New Product</a>
+        </div>
+    </body>
+</html>

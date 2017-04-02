@@ -1,0 +1,22 @@
+#coursesTable table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #DDDDFF;
+}
+#coursesTable td, th{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+#coursesTable tr:nth-child(even) {
+    background-color: lightblue;
+}
+#links a{
+    margin-left: 10px;
+    padding-right: 10px;
+    border-right: 1px solid black;
+}
+#links button{
+    margin-left: 20px;
+}
