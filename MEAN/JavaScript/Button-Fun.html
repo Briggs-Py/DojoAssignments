@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <title></title>
+    </head>
+    <body>
+        <style media="screen">
+            button{
+                background-color:blue;
+                color:white;
+            }
+            .red{
+	               background-color: red;
+                   color: black;
+            }
+            .green{
+	                background-color: green;
+                    color: pink;
+            }
+        </style>
+        <button id="test" name="button">Click Me!</button>
+        <script type="text/javascript">
+        $(document).on('click', 'button', function(){
+            $(this).toggleClass("red");
+        });
+
+
+        $("button").hover(function(){
+            $(this).addClass("green")
+        }, function(){ $(this).removeClass("green") });
+
+        </script>
+    </body>
+</html>
