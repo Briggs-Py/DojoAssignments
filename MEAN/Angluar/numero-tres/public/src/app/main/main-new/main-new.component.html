@@ -1,0 +1,13 @@
+<a [routerLink]="['/main']">Cancel</a>
+<h1>Create New Poll:</h1>
+<div *ngIf="error" class="alert alert-danger" role="alert">
+    <p>{{error._body}}</p>
+</div>
+<form (submit)="createQuestion(formData)" #formData="ngForm">
+    <label for="question">Question: <input type="text" name="question" value="" ngModel></label>
+    <label for="optionOne">Option 1: <input type="text" name="optionOne" value="" ngModel></label>
+    <label for="optionTwo">Option 2: <input type="text" name="optionTwo" value="" ngModel></label>
+    <label for="optionThree">Option 3: <input type="text" name="optionThree" value="" ngModel></label>
+    <label for="optionFour">Option 4: <input type="text" name="optionFour" value="" ngModel></label>
+    <input type="submit" name="" value="Create Poll">
+</form>

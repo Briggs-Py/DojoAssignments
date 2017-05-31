@@ -1,0 +1,34 @@
+<a [routerLink]="['/main']">Go to Polls</a>
+<div *ngIf="question">
+    <h1>{{question.question}}</h1>
+    <h4>Click the vote button to choose one</h4>
+    <div>
+        <table>
+            <tr>
+                <th>Option</th>
+                <th>Current Count on Votes</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>{{question.optionOne}}</td>
+                <td>{{question.voteOne}}</td>
+                <td><input (click)="vote(question._id, 'One')"type="submit" name="" value="Vote"></td>
+            </tr>
+            <tr>
+                <td>{{question.optionTwo}}</td>
+                <td>{{question.voteTwo}}</td>
+                <td><input (click)="vote(question._id, 'Two')"type="submit" name="" value="Vote"></td>
+            </tr>
+            <tr>
+                <td>{{question.optionThree}}</td>
+                <td>{{question.voteThree}}</td>
+                <td><input (click)="vote(question._id, 'Three')"type="submit" name="" value="Vote"></td>
+            </tr>
+            <tr>
+                <td>{{question.optionFour}}</td>
+                <td>{{question.voteFour}}</td>
+                <td><input (click)="vote(question._id, 'Four')"type="submit" name="" value="Vote"></td>
+            </tr>
+        </table>
+    </div>
+</div>
