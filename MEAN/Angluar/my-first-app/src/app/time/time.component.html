@@ -1,0 +1,8 @@
+<h3>Time</h3>
+<a routerLink='good-time'>Good</a>
+<a routerLink='bad-time'>Bad</a>
+<router-outlet></router-outlet>
+<hr>
+<p>Medium Time - {{time | date:'mediumTime'}}</p>
+<p>Short Time - {{time | date:'shortTime'}}</p>
+<p>Custom Time - {{time | date:'h:m:s'}}</p>

@@ -1,0 +1,28 @@
+<h1>User ended the bid.</h1>
+<a href="/logout">Logout</a>
+<h4>Highest bidder per Product:</h4>
+<div *ngFor="let product of products" class="">
+    {{product.name}}
+</div>
+<div class="products">
+    <h5>PS4</h5>
+    <p>A brand new sony computer entertainment system.</p>
+    <p>Highest Bidder: ___</p>
+    <p>Price: ___</p>
+</div>
+<div class="products">
+    <h5>2017 Honda Civic</h5>
+    <p>New Car</p>
+    <p>Highest Bidder: ___</p>
+    <p>Price: ___</p>
+</div>
+<div class="products">
+    <h5>Shoes</h5>
+    <p>Shiny new Shoes</p>
+    <p>Highest Bidder: ___</p>
+    <p>Price: ___</p>
+</div>
+
+<form (submit)=clearBids()>
+    <input type="submit" name="" value="Start New Bid">
+</form>

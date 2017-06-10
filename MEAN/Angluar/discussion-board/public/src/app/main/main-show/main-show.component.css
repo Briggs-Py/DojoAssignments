@@ -1,0 +1,43 @@
+h4 {
+    margin: 5px;
+    color: #eee;
+}
+
+p{
+    display: inline-block;
+    color: #eee;
+}
+.topic{
+    background-color: #223;
+    padding: 2%;
+}
+
+.messageDiv {
+    margin-left: 2vw;
+    padding: 4px;
+}
+
+.messages{
+    padding: 2%;
+    margin: 2%;
+    background-color: #222;
+    border-radius: 3px;
+}
+
+.comments{
+    padding: 2%;
+    margin: 2%;
+    background-color: #4aa;
+    border-radius: 3px;
+    margin-left: 4vw;
+}
+
+.navdiv{
+    margin: 1%;
+}
+
+.container{
+    margin-top: 70px;
+    margin-left: 40px;
+    padding: 2%;
+}

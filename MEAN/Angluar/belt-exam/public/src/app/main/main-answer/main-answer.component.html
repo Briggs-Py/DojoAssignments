@@ -1,0 +1,15 @@
+<a (click)="home()">Home</a>
+<div *ngIf="question" class="">
+    <a (click)="show(question._id)">Go Back to Question</a>
+    <a href="/logout">Logout</a>
+    <h1>{{question.question}}</h1>
+    <h4>{{question.description}}</h4>
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+        <p>{{error._body}}</p>
+    </div>
+    <form (submit)="createAnswer(formData, question._id)" #formData="ngForm">
+        <label for="answer">Your Answer: <input type="text" name="answer" value="" ngModel></label>
+        <label for="details">Supporting details: <input type="text" name="details" value="" ngModel></label>
+        <input type="submit" name="" value="Submit">
+    </form>
+</div>

@@ -1,0 +1,54 @@
+<h1>Bid Now</h1>
+<a href="/logout">Logout</a>
+<div *ngIf="error" class="alert alert-danger" role="alert">
+    <p>{{error_body}}</p>
+</div>
+<div class="products">
+    <h4>PS4</h4>
+    <p>A brand new sony computer entertainment system.</p>
+    <p *ngIf="products">Current Bid: ${{products[0].bid}}</p>
+    <form *ngIf="products" (submit)="newBid(formData, products[0].name)" #formData="ngForm">
+        <input type="text" name="bid" value="" ngModel>
+        <input type="submit" name="" value="Bid">
+    </form>
+
+    <h4>Current Bids:</h4>
+    <div id="bidders">
+        <!-- <div *ngFor="let user of products[0].users" class="">
+
+        </div> -->
+    </div>
+</div>
+<div class="products">
+    <h4>2017 Honda Civic</h4>
+    <p>It's a brand new car!!</p>
+    <p *ngIf="products">Current Bid: ${{products[1].bid}}</p>
+    <form *ngIf="products" (submit)="newBid(formData, products[1].name)" #formData="ngForm">
+        <input type="text" name="bid" value="" ngModel>
+        <input type="submit" name="" value="Bid">
+    </form>
+    <h4>Current Bids:</h4>
+    <div id="bidders">
+        <!-- <div *ngFor="let user of products[1].users" class="">
+
+        </div> -->
+    </div>
+</div>
+<div class="products">
+    <h4>Shoes</h4>
+    <p>Shiny new shoes.</p>
+    <p *ngIf="products">Current Bid: ${{products[2].bid}}</p>
+    <form *ngIf="products" (submit)="newBid(formData, products[2].name)" #formData="ngForm">
+        <input type="text" name="bid" value="" ngModel>
+        <input type="submit" name="" value="Bid">
+    </form>
+    <h4>Current Bids:</h4>
+    <div id="bidders">
+        <!-- <div *ngFor="let user of products[2].users" class="">
+
+        </div> -->
+    </div>
+</div>
+<form (submit)="results()">
+    <input type="submit" name="" value="End Bid">
+</form>

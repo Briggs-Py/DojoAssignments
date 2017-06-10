@@ -1,0 +1,10 @@
+<div class="center">
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+        <p>{{error._body}}</p>
+    </div>
+    <h4>Enter a username to continue:</h4>
+    <form (submit)="login(formData)" #formData="ngForm">
+        <input type="text" name="name" ngModel>
+        <input type="submit" value="Login">
+    </form>
+</div>

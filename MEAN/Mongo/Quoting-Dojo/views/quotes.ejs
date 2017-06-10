@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Quotes</title>
+    </head>
+    <body>
+        <h1>Quotes:</h1>
+        <div class="">
+            <% for(i in quotes){%>
+                <h4><%= quotes[i].name  %></h4>
+                <p><%= quotes[i].quote %></p>
+            <%}%>
+        </div>
+        <form class="" action="/">
+            <input type="submit" name="" value="Back">
+        </form>
+    </body>
+</html>

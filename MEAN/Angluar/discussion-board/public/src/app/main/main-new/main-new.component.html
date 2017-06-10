@@ -1,0 +1,19 @@
+<h3>Add a new Topic</h3>
+<form (submit)="createTopic(formData)" #formData="ngForm">
+    <label for="topic">Topic: <input type="text" name="topic" value="" ngModel></label>
+    <label for="description">Description: <textarea name="description" rows="2" cols="20" ngModel></textarea></label>
+    <label for="category">Category<select class="" name="category" ngModel>
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="Ruby">Ruby</option>
+        <option value="Swift">Swift</option>
+        <option value="Python">Python</option>
+        <option value="MEAN">MEAN</option>
+        <option value="C#">C#</option>
+        <option value="Web Development">Web Development</option>
+        <option value="UX">UX</option>
+        <option value="mySQL">mySQL</option>
+    </select></label>
+    <input type="submit" name="" value="Submit">
+</form>

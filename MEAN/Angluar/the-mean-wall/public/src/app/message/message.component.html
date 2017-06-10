@@ -1,0 +1,33 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navdiv">
+    <div class="navbar-header">
+      <h2>The MEAN Wall</h2>
+    </div>
+    <div id="navbar">
+      <form class="navbar-form navbar-right">
+        <p *ngIf="user">Welcome {{user.name}}! &nbsp; &nbsp; </p>
+        <a href=class="btn btn-primary">Sign Out</a>
+      </form>
+    </div>
+  </div><!--/.nav-collapse -->
+</nav>
+<div class="container">
+    <h4>Post a Message:</h4>
+    <form (submit)="createMessage(formData)" #formData='ngForm'>
+        <textarea name="message" rows="4" cols="80" ngModel></textarea>
+        <input type="submit" name="" value="Add Message">
+    </form>
+    <div class="messages" *ngFor='let message of messages'>
+        <h5 style="color: #eee;">{{message._user.name}} - {{message.createdAt | date: 'mediumDate'}}</h5>
+        <h5 style="color: #eee;">{{message.message}}</h5>
+        <div class="comments" *ngFor='let comment of message.comments'>
+            <h6>{{comment._user.name}} - {{comment.createdAt | date: 'mediumDate'}}</h6>
+            <h6>{{comment.comment}}</h6>
+        </div>
+        <form (submit)="createComment(formData, message._id)" #formData="ngForm">
+            <textarea name="comment" rows="4" cols="80" ngModel></textarea>
+            <input type="submit" name="" value="Add Comment">
+        </form>
+
+    </div>
+</div>

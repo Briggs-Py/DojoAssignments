@@ -1,0 +1,17 @@
+<h1 *ngIf="user">Hello {{user.name}}!</h1>
+<a href="/logout">Logout</a>
+<a (click)="newQuestion()">Add a Question</a>
+<div class="">
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Answers</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor='let question of questions'>
+            <td>{{question.question}}</td>
+            <td>{{question.answers.length}}</td>
+            <td><a [routerLink]="['/show', question._id]">Show</a> | <a [routerLink]="['/answer', question._id]">Answer</a></td>
+        </tr>
+    </table>
+</div>

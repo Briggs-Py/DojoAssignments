@@ -1,0 +1,17 @@
+<a (click)="home()">Home</a>
+<div *ngIf="question">
+    <a (click)="answer(question._id)">Answer this Question</a>
+    <a href="/logout">Logout</a>
+    <h1>{{question.question}}</h1>
+    <h4>{{question.description}}</h4>
+    <div *ngFor="let answer of question.answers">
+        <h5>{{answer._user.name}} - {{answer.createdAt | date: 'mediumDate'}}</h5>
+        <p>Answer: {{answer.answer}}</p>
+        <p>Supporting details: {{answer.details}}</p>
+        <p>Likes: {{answer.likes}}</p>
+        <input (click)="like(answer._id)"type="submit" name="" value="Like">
+    </div>
+    <div *ngIf="question.answers.length < 1"class="">
+        <p>There are no answers.</p>
+    </div>
+</div>

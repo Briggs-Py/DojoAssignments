@@ -1,0 +1,19 @@
+<h1 *ngIf="user">Hello {{user.name}}!</h1>
+<a href="/logout">Logout</a>
+<div class="">
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Topic</th>
+            <th>Coder</th>
+            <th>Posts</th>
+        </tr>
+        <tr *ngFor='let topic of topics'>
+            <td>{{topic.category}}</td>
+            <td><a [routerLink]="['/show', topic._id]">{{topic.topic}}</a></td>
+            <td><a [routerLink]="['/show', topic._id]">{{topic._user.name}}</a></td>
+            <td>{{topic.posts.length}}</td>
+        </tr>
+    </table>
+</div>
+<app-main-new (eventNew)="createTopic($event)"></app-main-new>

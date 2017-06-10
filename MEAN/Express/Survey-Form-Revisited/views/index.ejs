@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type ="text/javascript">
+        $(document).ready(function(){
+
+            var socket = io.connect();
+
+            $("#survey_form").submit(function(e){
+                e.preventDefault();
+                socket.emit("posting", {
+                    name: $("#name").val(),
+                    location: $("#location").val(),
+                    language: $("#language").val(),
+                    comment: $("#comment").val()
+                });
+            });
+
+            socket.on('updated_message', function (data){
+			    $('#message').html("You emitted the following information to the server: " + JSON.stringify(data.response));
+			});
+			socket.on('randNum', function (data){
+			   $('#number').html("Your lucky number emitted by the server is : " + JSON.stringify(data.response));
+			});
+        });
+        </script>
+        <title>Survey Form</title>
+    </head>
+    <body>
+        <div id="message">
+
+        </div>
+        <div id="number">
+
+        </div>
+        <form id="survey_form" action="">
+            <div class="">
+                Your Name:<input type="text" name="name" id="name">
+            </div>
+            <div class="">
+                Dojo Location: <select class="" name="location" id="location">
+                    <option value="Burbank">Burbank</option>
+                    <option value="San Jose">San Jose</option>
+                    <option value="Orange County">Orange County</option>
+                </select>
+            </div>
+            <div class="">
+                Favorite Language: <select class="" name="language" id="language">
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="Ruby">Ruby</option>
+                    <option value="Swift">Swift</option>
+                    <option value="C#">C#</option>
+                </select>
+            </div>
+            <div class="">
+                Comment (Optional): <textarea id="comment" name="comment" rows="8" cols="80"></textarea>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

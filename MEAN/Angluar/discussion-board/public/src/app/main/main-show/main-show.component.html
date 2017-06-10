@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navdiv">
+    <div class="navbar-header">
+      <h2 style="color: #eee;">Discussion Board</h2>
+    </div>
+    <div id="navbar">
+      <form class="navbar-form navbar-right">
+        <a [routerLink]="['/main']">Dashboard</a>
+        <p *ngIf="user">Logged in as {{user.name}} &nbsp; &nbsp; </p>
+        <a href="/logout" class="btn btn-primary">Logout</a>
+      </form>
+    </div>
+  </div><!--/.nav-collapse -->
+</nav>
+<div class="container">
+    <div *ngIf="topic" class="topic">
+        <h4 style="color: #eee;">{{topic._user.name}} - {{topic.topic}} </h4>
+        <h5 style="color: #eee;">{{topic.description}}</h5>
+        <h6 style="color: #eee;">{{topic.createdAt | date: 'mediumDate'}}</h6>
+        <h5 style="color: #eee;">Post your answer here:</h5>
+        <form (submit)="createPost(formData, topic._id)" #formData='ngForm'>
+            <textarea name="post" rows="3" cols="80" ngModel></textarea>
+            <input type="submit" name="" value="Post">
+        </form>
+        <div class="messages" *ngFor='let post of topic.posts'>
+            <h5 style="color: #eee;">{{post._user.name}} - {{post.post}}</h5>
+            <h6 style="color: #eee;">{{post.createdAt | date: 'mediumDate'}}</h6>
+            <div class="comments" *ngFor='let comment of post.comments'>
+                <h6>{{comment._user.name}} - {{comment.createdAt | date: 'mediumDate'}}</h6>
+                <h6>{{comment.comment}}</h6>
+            </div>
+            <form (submit)="createComment(formData, post._id)" #formData="ngForm">
+                <textarea name="comment" rows="3" cols="80" ngModel></textarea>
+                <input type="submit" name="" value="Add Comment">
+            </form>
+        </div>
+    </div>
+</div>
